@@ -13,10 +13,10 @@ import { RouterLink, RouterView } from 'vue-router'
             <span>NKrEYnge</span>
           </div>
         </RouterLink>
-        <RouterLink to="/contenu">
+        <RouterLink to="/profil">
           <div>
-            <img src="@/components/icons/contenu.png" alt="contenu">
-            <span>Contenu</span>
+            <img src="@/components/icons/user.png" alt="contenu">
+            <span>Profil</span>
           </div>
         </RouterLink>
         <RouterLink to="/conversations">
@@ -25,10 +25,10 @@ import { RouterLink, RouterView } from 'vue-router'
             <span>Conversations</span>
           </div>
         </RouterLink>
-        <RouterLink to="/profil">
+        <RouterLink to="/contenu">
           <div>
-            <img src="@/components/icons/user.png" alt="contenu">
-            <span>Profil</span>
+            <img src="@/components/icons/contenu.png" alt="contenu">
+            <span>Contenu</span>
           </div>
         </RouterLink>
       </nav>
@@ -62,8 +62,7 @@ a div#home span {
 a div:not(#home) {
   float: right;
   width: 100px;
-  padding: 5px;
-  margin: 10px;
+  padding: 22px;
 }
 
 a div:not(#home) img {
@@ -79,11 +78,11 @@ a div:not(#home) span {
   color: white;
 }
 
-nav a.router-link-exact-active {
-
+nav a.router-link-exact-active div:not(#home) {
+  background-color: var(--opac50);
 }
 
-nav a.router-link-exact-active:hover {
-
+nav a div:not(#home):not(.router-link-exact-active):hover {
+  background-color: var(--opac25);
 }
 </style>
