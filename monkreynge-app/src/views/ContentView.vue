@@ -1,23 +1,29 @@
 <script setup>
+import { ref } from 'vue';
+import Contenu from '../components/ContenuComponent.vue';
+import Historique from '../components/HistoriqueComponent.vue';
 
+const gauche = ref(true);
 </script>
 
 <template>
     <div class="nav-btns">
         <label>
-            <input type="radio" name="content-type" value="content1" checked>
+            <input type="radio" name="content-type" value="content1" @click="(gauche = true)" checked>
             <i>Mon contenu</i>
         </label>
         <label>
-            <input type="radio" name="content-type" value="content2">
-            <i>Contenu noté</i>
+            <input type="radio" name="content-type" value="content2" @click="(gauche = false)">
+            <i>Historique</i>
         </label>
     </div>
+    <Contenu v-if="gauche"/>
+    <Historique v-if="!gauche"/>
 </template>
 
 <style scoped>
 .nav-btns {
-    margin: 30px auto;
+    margin: 60px auto;
     width: fit-content
 }
 
