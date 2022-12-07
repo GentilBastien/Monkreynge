@@ -1,16 +1,16 @@
 @import "./base.css";
 
 body {
-  margin: 0;
-  background-color: var(--bg-col);
-  overflow: hidden;
-  user-select: none;
-  transition: color 0.5s, background-color 0.5s;
-  font-family: "Calibri", sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    background-color: var(--bg-col);
+    overflow: hidden;
+    user-select: none;
+    transition: color 0.5s, background-color 0.5s;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar {
@@ -19,16 +19,53 @@ body {
     background: transparent;
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 ::-webkit-scrollbar-track {
     background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #C7C7C7;
     border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #919191;
 }
+
 ::-webkit-scrollbar-corner {
     background: transparent;
+}
+
+
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+    transition: all 0.5s linear;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+
+
+.fade1-enter-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade1-enter-from {
+    opacity: 0;
+}
+
+.fade2-enter-active,
+.fade2-leave-active {
+    transition: all 0.5s linear;
+}
+.fade2-enter-from,
+.fade2-leave-to {
+    transform: translateY(-20px);
+    opacity: 0;
 }

@@ -29,13 +29,21 @@ defineProps({
 <style scoped>
 #bloc-main {
     position: relative;
-    display: inline-block;
-    background: var(--main-col);
+    display: inline-block;    
+    background: var(--transp50);
+    box-shadow: var(--opac50) 0px 0px 10px 3px;
     border: 2px solid rgba(255, 255, 255, 0.33);
     border-radius: 15px;
     margin: 20px;
     width: 184px;
     height: 300px;
+}
+
+#bloc-main:hover {
+    box-shadow: var(--main-col) 0px 0px 10px 3px;
+    transition: transform .2s;
+    transform: scale(1.02);
+    
 }
 
 #bloc-main img {

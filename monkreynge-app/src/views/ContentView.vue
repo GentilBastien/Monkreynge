@@ -11,33 +11,36 @@ const arrowUp = "/src/components/icons/filled_arrow_up.png";
 </script>
 
 <template>
-    <div v-if="!bas" class="nav-btns">
-        <label>
-            <input type="radio" name="content-type" value="content1" @click="(gauche = true)" checked>
-            <i>Mon contenu</i>
-        </label>
-        <label>
-            <input type="radio" name="content-type" value="content2" @click="(gauche = false)">
-            <i>Historique</i>
-        </label>
-    </div>
-    <div v-if="!bas" id="bloc">
-        <Transition name="fade">
-            <Contenu v-if="gauche" />
-        </Transition>
-
-        <Transition name="fade">
-            <Historique v-if="!gauche" />
-        </Transition>
-    </div>
+    <Transition name="fade2">
+        <div v-if="!bas">
+            <div class="nav-btns">
+                <label>
+                    <input type="radio" name="content-type" value="content1" @click="(gauche = true)" :checked="gauche">
+                    <i>Mon contenu</i>
+                </label>
+                <label>
+                    <input type="radio" name="content-type" value="content2" @click="(gauche = false)"
+                        :checked="!gauche">
+                    <i>Historique</i>
+                </label>
+            </div>
+            <div id="bloc">
+                <Transition name="fade1">
+                    <Contenu v-if="gauche" />
+                </Transition>
+                <Historique v-if="!gauche" />
+            </div>
+        </div>
+    </Transition>
 
     <div id="add-content">
-        <div @click="(bas = !bas)">
+        <div @click="(bas = !bas)" id="btn">
             <img :src="bas ? arrowDown : arrowUp" alt="arrow">
-            <span>Ajouter contenu</span>
+            <span>{{ bas ? "Fermer" : "Ajouter contenu" }}</span>
         </div>
         <Bas v-if="bas" />
     </div>
+
 
 </template>
 
@@ -100,30 +103,20 @@ input[type="radio"]:checked+i {
     padding: 20px;
 }
 
-#add-content div:hover {
+#add-content div#btn:hover {
     background-color: #f9f9f9;
     border-radius: 20px 20px 0 0;
 }
 
-#add-content div img {
+#add-content div#btn img {
     display: block;
     width: 50px;
     margin: 0 auto;
 }
 
-#add-content div span {
+#add-content div#btn span {
     display: block;
     width: fit-content;
     margin: 0 auto;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
 }
 </style>

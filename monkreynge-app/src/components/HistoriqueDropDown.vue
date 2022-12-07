@@ -63,18 +63,4 @@ button img {
     border-right: 1px solid rgba(255, 255, 255, 0.33);
     border-bottom: 1px solid rgba(255, 255, 255, 0.33);
 }
-
-.slide-fade-enter-active {
-  transition: all 0.5s linear;
-}
-
-.slide-fade-leave-active {
-    transition: all 0.5s linear;
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateY(-20px);
-  opacity: 0;
-}
 </style>

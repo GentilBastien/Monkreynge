@@ -6,7 +6,12 @@
   --black-soft: #222222;
   --black-mute: #282828;
   --main-col: #41B883;
+  --main-col-transp75: #41b883c6;
   --bg-col: #363434;
   --opac25: rgba(0, 0, 0, 0.25);
   --opac50: rgba(0, 0, 0, 0.5);
+  --opac75: rgba(0, 0, 0, 0.75);
+  --transp25: rgba(255, 255, 255, 0.25);
+  --transp50: rgba(255, 255, 255, 0.5);
+  --transp75: rgba(255, 255, 255, 0.75);
 }

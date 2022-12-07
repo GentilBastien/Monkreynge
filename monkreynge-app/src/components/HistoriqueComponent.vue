@@ -19,7 +19,7 @@ import Vid from './HistoriqueVidPreview.vue';
         </template>
     </Drop>
     <Drop titre="Octobre 2022">
-
+        
     </Drop>
     <Drop titre="Septembre 2022">
 
