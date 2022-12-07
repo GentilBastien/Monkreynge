@@ -86,7 +86,7 @@ input[type="radio"]:checked+i {
     border: 1px solid #575757;
     border-radius: 15px;
 
-    height: 55vh;
+    height: 56vh;
 }
 
 #add-content {
