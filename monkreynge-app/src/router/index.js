@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import LoginView from "../views/LoginView.vue";
 import ContentView from "../views/ContentView.vue";
 import ConversationsView from "../views/ConversationsView.vue";
 import MainView from "../views/MainView.vue";
@@ -7,6 +8,11 @@ import ProfilView from "../views/ProfilView.vue";
 const routes = [
   {
     path: "/",
+    name: "login",
+    component: LoginView,
+  },
+  {
+    path: "/main",
     name: "main",
     component: MainView,
   },

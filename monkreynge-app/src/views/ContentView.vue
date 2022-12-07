@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import Nav from '../components/Nav.vue';
 import Contenu from '../components/ContenuComponent.vue';
 import Historique from '../components/HistoriqueComponent.vue';
 import Bas from '../components/AjouterContenu.vue';
@@ -11,6 +12,7 @@ const arrowUp = "/src/components/icons/filled_arrow_up.png";
 </script>
 
 <template>
+    <Nav />
     <Transition name="fade2">
         <div v-if="!bas">
             <div class="nav-btns">
