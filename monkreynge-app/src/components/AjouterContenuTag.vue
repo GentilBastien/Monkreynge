@@ -22,6 +22,8 @@ defineProps({
         border-radius: 10px;
         font-size: 20px;
         margin-right: 10px;
+        color: black;
+        white-space: nowrap;
         background-color: var(--main-col-transp75);
     }
 

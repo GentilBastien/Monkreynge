@@ -93,7 +93,7 @@ input[type="radio"]:checked+i {
 }
 
 #add-content {
-    margin-top: 20px;
+    margin: 20px 100px 0 100px;
     background-color: #D9D9D9;
     border-radius: 20px 20px 0 0;
     height: 100vh;
@@ -118,5 +118,7 @@ input[type="radio"]:checked+i {
     display: block;
     width: fit-content;
     margin: 0 auto;
+    font-size: 26px;
+    font-weight: bold;
 }
 </style>
