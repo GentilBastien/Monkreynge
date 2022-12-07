@@ -1,32 +1,21 @@
 <script setup>
-import Drop from './ContenuDropDown.vue';
+import Vid from './HistoriqueVidPreview.vue';
 </script>
 
 <template>
-    <div id="bloc">
-        <Drop titre="Décembre 2022"/>
-        <Drop titre="Novembre 2022"/>
-        <Drop titre="Octobre 2022"/>
-        <Drop titre="Septembre 2022"/>
-        <Drop titre="Août 2022"/>
-        <Drop titre="Juillet 2022"/>
-        <Drop titre="Juin 2022"/>
-        <Drop titre="Mai 2022"/>
-        <Drop titre="Avril 2022"/>
+    <div id="horizon">
+        <Vid titre="Essai" description="Eww" note="7" class="over"/>
+        <Vid titre="MaVideo" description="Eww" note="7" class="over"/>
+        <Vid titre="Test123" description="Eww" note="7" class="over"/>
+        <Vid titre="Titi.mp4" description="Eww" note="7" class="over"/>
+        <Vid titre="Genant_lui" description="Eww" note="7" class="over"/>
+        <Vid titre="Nicolabef" description="Eww" note="7" class="over"/>
     </div>
-    
+
 </template>
 
 <style scoped>
-#bloc {
-    overflow-y: auto;
-    width: 50vw;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #575757;
-    border-radius: 15px;
-
-    height: 60vh;
-}
+    .over {
+        display: inline;
+    }
 </style>

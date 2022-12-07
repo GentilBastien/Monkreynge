@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import Vid from './ContenuVidPreview.vue'
 defineProps({
     titre: {
         type: String,
@@ -24,10 +23,7 @@ const arrowDown = "/src/components/icons/arrow_down.png";
         </button>
         <Transition name="slide-fade">
             <div v-if="isDown" class="bloc-dropdown-content">
-                <Vid titre="Hey" description="Eww" note="7" />
-                <Vid titre="Yo" description="Incr" note="5" />
-                <Vid titre="Salut" description="Pour aller où nan mais c'est quoi cette vidéo??" note="2" />
-                <Vid titre="Salut" description="Pour aller où nan mais c'est quoi cette vidéo??" note="2" />
+                <slot name="vdo"></slot>
             </div>
         </Transition>
     </div>
@@ -46,6 +42,10 @@ button {
     border: 1px solid rgba(255, 255, 255, 0.33);
 }
 
+button:hover {
+    background-color: #7f7f7f;
+}
+
 button span {
     float: left;
     color: white;
@@ -58,7 +58,10 @@ button img {
 }
 
 .bloc-dropdown-content {
-    background-color: #D9D9D9;
+    background-color: #4F4F4F;
+    border-left: 1px solid rgba(255, 255, 255, 0.33);
+    border-right: 1px solid rgba(255, 255, 255, 0.33);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.33);
 }
 
 .slide-fade-enter-active {

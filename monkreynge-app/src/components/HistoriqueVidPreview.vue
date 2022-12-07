@@ -31,9 +31,10 @@ defineProps({
     position: relative;
     display: inline-block;
     background: var(--main-col);
+    border: 2px solid rgba(255, 255, 255, 0.33);
     border-radius: 15px;
     margin: 20px;
-    width: 188px;
+    width: 184px;
     height: 300px;
 }
 
