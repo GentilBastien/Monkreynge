@@ -62,5 +62,6 @@ button img {
     border-left: 1px solid rgba(255, 255, 255, 0.33);
     border-right: 1px solid rgba(255, 255, 255, 0.33);
     border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+    border-radius: 0 0 15px 15px;
 }
 </style>

@@ -121,19 +121,6 @@ a.inputs:hover {
     color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 header {
     background-color: var(--main-col);
     height: 100px;

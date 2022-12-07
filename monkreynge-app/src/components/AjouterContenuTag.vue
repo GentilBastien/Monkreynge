@@ -39,7 +39,7 @@ defineProps({
     }
 
     .remove-tag:hover {
-        
+        cursor: pointer;
         background-color: #ffffff84;
     }
 </style>

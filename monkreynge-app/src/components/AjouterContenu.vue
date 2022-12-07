@@ -121,5 +121,11 @@ select {
     text-align: center;
     width: 25px;
     height: 25px;
+    border-radius: 8px;
+}
+
+select:hover {
+    background-color: var(--main-col-transp25);
+    cursor: pointer;
 }
 </style>

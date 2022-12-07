@@ -108,6 +108,7 @@ input[type="radio"]:checked+i {
 #add-content div#btn:hover {
     background-color: #f9f9f9;
     border-radius: 20px 20px 0 0;
+    cursor: pointer;
 }
 
 #add-content div#btn img {
