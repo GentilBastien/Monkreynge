@@ -43,10 +43,19 @@ body {
 .slide-fade-leave-active {
     transition: all 0.5s linear;
 }
-
 .slide-fade-enter-from,
 .slide-fade-leave-to {
     transform: translateY(-20px);
+    opacity: 0;
+}
+
+.slide-fade-horizontal-enter-active,
+.slide-fade-horizontal-leave-active {
+    transition: all 0.5s linear;
+}
+.slide-fade-horizontal-enter-from,
+.slide-fade-horizontal-leave-to {
+    transform: translateX(-50px);
     opacity: 0;
 }
 

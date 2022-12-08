@@ -34,6 +34,13 @@ defineProps({
     margin: 10px;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.33);
+    transform: scale(1);
+    transition: transform .2s;
+}
+
+.methods div:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
 }
 
 .methods div img {
