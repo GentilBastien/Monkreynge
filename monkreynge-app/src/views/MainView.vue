@@ -1,6 +1,17 @@
 <script setup>
+import { ref } from 'vue';
 import Nav from '../components/Nav.vue';
 import Video from '../components/Video.vue';
+import Signal from '../components/BlocSignaler.vue';
+
+let blocPassageWidth = "35%";
+let arrowMarginOffset = "80%";
+const isThereBloc = ref(false);
+function toggleBloc() {
+    isThereBloc.value = !isThereBloc.value;
+    blocPassageWidth = isThereBloc.value ? "20%" : "35%";
+    arrowMarginOffset = isThereBloc.value ? "60%" : "80%";
+}
 </script>
 
 <template>
@@ -9,7 +20,11 @@ import Video from '../components/Video.vue';
             <img src="@/components/icons/precedant.png" alt="precedant" class="arrow">
         </div>
 
-        <Video titre="Titre de la vidéo" description="Ceci est une courte description de la vidéo"></Video>
+        <Video titre="Titre de la vidéo" description="Ceci est une courte description de la vidéo" :toggle="toggleBloc"/>
+
+        <div v-if="isThereBloc" class="comm">
+            <Signal :toggle="toggleBloc" />
+        </div>
 
         <div class="bloc-passage" id="suivant">
             <img src="@/components/icons/suivant.png" alt="suivant" class="arrow">
@@ -18,11 +33,18 @@ import Video from '../components/Video.vue';
 </template>
 
 <style scoped>
+.comm {
+    float: left;
+    height: calc(100vh - 100px);
+    background-color: #444444;
+    width: 30%;
+    border-radius: 30px;
+}
 .bloc-passage {
     float: left;
     background-color: #363434;
     height: calc(100vh - 100px);
-    width: 35%;
+    width: v-bind('blocPassageWidth');
 }
 
 #precedant:hover {
@@ -49,11 +71,11 @@ import Video from '../components/Video.vue';
 
 #precedant img {
     float: left;
-    margin-left: 80%;
+    margin-left: v-bind('arrowMarginOffset');
 }
 
 #suivant img {
     float: right;
-    margin-right: 80%;
+    margin-right: v-bind('arrowMarginOffset');
 }
 </style>

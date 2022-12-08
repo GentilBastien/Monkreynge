@@ -8,7 +8,11 @@ defineProps({
     description: {
         type: String,
         required: true
-    }
+    },
+    toggle: {
+        type: Function,
+        required: true
+    },
 });
 
 const slider = reactive(
@@ -28,9 +32,9 @@ function img() {
         </div>
         <img id="vdo" src="./icons/bigvid.png" alt="video" />
         <div class="icons">
-            <img src="./icons/conv.png" alt="conv" />
-            <img src="./icons/share.png" alt="share" />
-            <img src="./icons/report.png" alt="report" />
+            <img src="./icons/conv.png" alt="conv" @click="toggle"/>
+            <img src="./icons/share.png" alt="share" @click="toggle"/>
+            <img src="./icons/report.png" alt="report" @click="toggle"/>
         </div>
         <div class="slidecontainer">
             <input type="range" min="1" max="10" v-model="slider.value" class="slider">
