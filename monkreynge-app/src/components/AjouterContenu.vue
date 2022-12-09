@@ -76,7 +76,7 @@ function redirectToMain() {
         <transition name="modal">
             <modal v-if="showModal" @close="showModal = false" @save="redirectToMain">
                 <template #header>
-                    <h3>Vous allez ajouter du contenu sur MONKrEYnge, voulez-vous continuer ?</h3>
+                    <h3>Vous allez ajouter du contenu sur MONKrEYnge, cette action est irréversible. Voulez-vous continuer ?</h3>
                 </template>
                 <template #body>
                     <span>Titre : {{titre}}</span><br/>

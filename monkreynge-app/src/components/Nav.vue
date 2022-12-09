@@ -8,7 +8,7 @@ import { RouterLink } from 'vue-router'
             <nav>
                 <RouterLink to="/main">
                     <div id="home">
-                        <span>M </span>
+                        <span>M</span>
                         <img id="monk" src="@/components/icons/monk.png" alt="contenu">
                         <span>NKrEYnge</span>
                     </div>

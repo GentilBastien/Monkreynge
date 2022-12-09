@@ -23,7 +23,7 @@ const arrowUp = "/src/components/icons/filled_arrow_up.png";
                 <label>
                     <input type="radio" name="content-type" value="content2" @click="(gauche = false)"
                         :checked="!gauche">
-                    <i>Historique</i>
+                    <i>Historique des notations</i>
                 </label>
             </div>
             <div id="bloc">

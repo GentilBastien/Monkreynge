@@ -16,7 +16,7 @@ defineProps({
 });
 
 const slider = reactive(
-    { nom: 'Note', value: 5 }
+    { nom: 'Note', value: 7 }
 );
 
 function img() {

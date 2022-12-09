@@ -11,14 +11,14 @@ defineProps({
 
 <template>
     <div class="header">
-        <span class="zioup" id="title">Partager la vidéo</span>
+        <span class="zioup" id="title">Exporter la vidéo</span>
         <span id="close" @click="toggle">&#10005;</span>
     </div>
 
     <div class="methods">
         <Comp path="/src/components/icons/link.png" texte="Copier le lien" />
         <Comp path="/src/components/icons/mail.png" texte="Envoyer par message privé" />
-        <Comp path="/src/components/icons/share.png" texte="Partager via..." />
+        <Comp path="/src/components/icons/dl.png" texte="Télécharger" />
     </div>
 </template>
 
