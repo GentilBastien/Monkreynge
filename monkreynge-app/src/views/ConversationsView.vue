@@ -66,7 +66,7 @@ const conversations = reactive([
                 ownMsg: false,
             },
             {
-                msg: "Nul arrête les blagues nicolat",
+                msg: "Tu es zinzin",
                 timestamps: "le 18/01/2022 à 16:16",
                 ownMsg: true,
             },
@@ -135,7 +135,22 @@ const conversations = reactive([
             }
         ]
     },
-    { username: "Picx", selected: false, msgs: [] },
+    {
+        username: "Picx_38",
+        selected: false,
+        msgs: [
+            {
+                msg: "Salut c'est mon deuxième compte",
+                timestamps: "le 18/01/2022 à 16:15",
+                ownMsg: false,
+            },
+            {
+                msg: "Salut Nicolat",
+                timestamps: "le 18/01/2022 à 16:16",
+                ownMsg: true,
+            }
+        ]
+    },
     {
         username: "Pharid",
         selected: false,

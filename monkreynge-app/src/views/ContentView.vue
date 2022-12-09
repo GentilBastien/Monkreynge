@@ -96,7 +96,7 @@ input[type="radio"]:checked+i {
 
 #add-content {
     margin: 20px 100px 0 100px;
-    background-color: #D9D9D9;
+    background-color: #363636;
     border-radius: 20px 20px 0 0;
     height: 100vh;
 }
@@ -105,9 +105,13 @@ input[type="radio"]:checked+i {
     padding: 20px;
 }
 
+#add-content div#btn {
+    background-color: #cccccc;
+    border-radius: 20px 20px 0 0;
+}
+
 #add-content div#btn:hover {
     background-color: #f9f9f9;
-    border-radius: 20px 20px 0 0;
     cursor: pointer;
 }
 

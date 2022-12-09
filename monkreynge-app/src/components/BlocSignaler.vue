@@ -1,11 +1,18 @@
 <script setup>
 import { ref } from 'vue';
 import Comp from './BlocSignalerComponent.vue';
+defineProps({
+    toggle: {
+        type: Function,
+        required: true
+    }
+});
 </script>
 
 <template>
-    <div>
+    <div class="header">
         <span class="zioup" id="title">Partager la vidéo</span>
+        <span id="close" @click="toggle">&#10005;</span>
     </div>
 
     <div class="methods">
@@ -16,6 +23,28 @@ import Comp from './BlocSignalerComponent.vue';
 </template>
 
 <style scoped>
+.header {
+    position: relative;
+}
+
+#close {
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 8px;
+    color: white;
+    top: 0;
+    right: 20px;
+    transform: scale(1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+#close:hover {
+    background: rgb(207, 78, 78);
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
 .zioup {
     display: block;
     color: white;

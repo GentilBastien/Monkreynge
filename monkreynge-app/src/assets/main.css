@@ -43,6 +43,7 @@ body {
 .slide-fade-leave-active {
     transition: all 0.5s linear;
 }
+
 .slide-fade-enter-from,
 .slide-fade-leave-to {
     transform: translateY(-20px);
@@ -53,6 +54,7 @@ body {
 .slide-fade-horizontal-leave-active {
     transition: all 0.5s linear;
 }
+
 .slide-fade-horizontal-enter-from,
 .slide-fade-horizontal-leave-to {
     transform: translateX(-50px);
@@ -73,8 +75,24 @@ body {
 .fade2-leave-active {
     transition: all 0.5s linear;
 }
+
 .fade2-enter-from,
 .fade2-leave-to {
     transform: translateY(-20px);
     opacity: 0;
+}
+
+
+
+
+
+
+.modal-enter-from,
+.modal-leave-to {
+    opacity: 0;
+}
+
+.modal-enter-active .modal-container,
+.modal-leave-active .modal-container {
+    opacity: 1;
 }

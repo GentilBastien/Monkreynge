@@ -12,11 +12,13 @@ defineProps({
         type: String,
         required: true
     }
-})
+});
+
 </script>
 
 <template>
-    <div id="bloc-main">
+    <a href="/main">
+        <div id="bloc-main">
         <img src="./icons/vid.png" alt="video">
         <div id="text">
             <span><b>Titre :</b> {{ titre }}</span>
@@ -24,6 +26,8 @@ defineProps({
             <span><b>Ma note :</b> {{ note }}/10</span>
         </div>
     </div>
+    </a>
+    
 </template>
 
 <style scoped>
@@ -67,5 +71,10 @@ defineProps({
     font-size: 16px;
     padding: 0 10px;
     word-wrap:break-word;
+    color: black;
+}
+
+a {
+    
 }
 </style>
