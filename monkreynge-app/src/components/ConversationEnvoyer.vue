@@ -12,7 +12,7 @@ defineProps({
 
 })
 
-const text = ref('Envoyer un message');
+const text = ref("");
 </script>
 
 <template>
@@ -20,8 +20,8 @@ const text = ref('Envoyer un message');
         <img src="./icons/mic.png" alt="mic">
         <img src="./icons/picture.png" alt="pic">
         <img src="./icons/monk.png" alt="monk">
-        <input type="text" v-model="text">
-        <img src="./icons/send.png" alt="send" @click="send(username, text)">
+        <input type="text" v-model="text" placeholder="envoyer un message">
+        <img src="./icons/send.png" alt="send" @click="send(username, text); text=''">
     </div>
 </template>
 

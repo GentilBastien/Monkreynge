@@ -28,22 +28,12 @@ const conversations = reactive([
             {
                 msg: "Quoi de neuf ?",
                 timestamps: "le 18/01/2022 à 16:16",
-                ownMsg: true,
-            },
-            {
-                msg: "Feur trois 10",
-                timestamps: "le 18/01/2022 à 16:16",
                 ownMsg: false,
-            },
-            {
-                msg: "Nul arrête les blagues nicolat",
-                timestamps: "le 18/01/2022 à 16:16",
-                ownMsg: true,
             },
             {
                 msg: "salut, ça va ?",
                 timestamps: "le 18/01/2022 à 16:15",
-                ownMsg: true,
+                ownMsg: false,
             },
             {
                 msg: "Oui très bien et toi ?",
@@ -58,18 +48,8 @@ const conversations = reactive([
             {
                 msg: "Quoi de neuf ?",
                 timestamps: "le 18/01/2022 à 16:16",
-                ownMsg: true,
-            },
-            {
-                msg: "Feur trois 10",
-                timestamps: "le 18/01/2022 à 16:16",
                 ownMsg: false,
-            },
-            {
-                msg: "Tu es zinzin",
-                timestamps: "le 18/01/2022 à 16:16",
-                ownMsg: true,
-            },
+            }
         ]
     },
     {
@@ -83,11 +63,6 @@ const conversations = reactive([
             },
             {
                 msg: "STOP",
-                timestamps: "le 18/01/2022 à 16:16",
-                ownMsg: true,
-            },
-            {
-                msg: "no parlo latino",
                 timestamps: "le 18/01/2022 à 16:16",
                 ownMsg: true,
             }
@@ -177,6 +152,9 @@ function getUserMsgs(username) {
 }
 
 function sendMsgTo(username, msg) {
+    if (msg == '') {
+        return;
+    }
     conversations.find(conv => conv.username == username).msgs.push(
         {
             msg: msg,
@@ -186,7 +164,7 @@ function sendMsgTo(username, msg) {
     );
     setIntervalLimited(function () {
         let elem = document.getElementById("messages");
-        elem.scrollTop = elem.scrollHeight;          // => hit...hit...etc (every second, stops after 10)
+        elem.scrollTop = elem.scrollHeight;
     }, 50, 1)
 }
 
