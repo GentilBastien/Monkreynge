@@ -240,6 +240,7 @@ const friendAdded = ref('');
 }
 
 #the-input {
+    width: 250px;
     line-height: 40px;
     border-radius: 15px;
     font-size: 20px;
