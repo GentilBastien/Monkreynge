@@ -30,8 +30,8 @@ import { RouterLink } from 'vue-router'
         </div>
         <img id="main-img" src="@/components/icons/monk.png" alt="contenu">
         <div>
-            <input type="text" class="inputs" value="e-mail ou pseudonyme">
-            <input type="text" class="inputs" value="Mot de passe">
+            <input type="text" class="inputs" placeholder="e-mail ou pseudonyme">
+            <input type="password" class="inputs" placeholder="Mot de passe">
             <RouterLink to="/main" class="inputs">Se connecter</RouterLink>
         </div>
         <div id="addons">
@@ -78,7 +78,7 @@ import { RouterLink } from 'vue-router'
     font-size: 20px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
     width: 345px;
     padding-left: 50px;
     font-style: italic;
@@ -93,7 +93,7 @@ a.inputs {
     text-decoration: none;
 }
 
-input[type="text"]:hover, a.inputs:hover {
+input[type="text"]:hover, a.inputs:hover, input[type="password"]:hover {
     transition: transform .2s;
     transform: scale(1.02);
 }

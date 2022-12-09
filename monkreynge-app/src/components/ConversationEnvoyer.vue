@@ -20,8 +20,9 @@ const text = ref("");
         <img src="./icons/mic.png" alt="mic">
         <img src="./icons/picture.png" alt="pic">
         <img src="./icons/monk.png" alt="monk">
-        <input type="text" v-model="text" placeholder="envoyer un message">
-        <img src="./icons/send.png" alt="send" @click="send(username, text); text=''">
+        <input type="text" v-model="text" placeholder="envoyer un message" @keyup.enter="send(username, text); text=''">
+        <img src="./icons/send.png" alt="send" 
+        @click="send(username, text); text=''">
     </div>
 </template>
 

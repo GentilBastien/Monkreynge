@@ -3,8 +3,9 @@ import Nav from '../components/Nav.vue';
 import Conv from '../components/ConversationFriend.vue';
 import Mess from '../components/ConversationMessageText.vue';
 import Send from '../components/ConversationEnvoyer.vue';
+import modal from '../components/Modal.vue';
 import { ref, reactive } from 'vue';
-
+const showModal = ref(false);
 const conversations = reactive([
     {
         username: "Nicolat",
@@ -16,39 +17,29 @@ const conversations = reactive([
                 ownMsg: true,
             },
             {
-                msg: "Oui très bien et toi ?",
+                msg: "Oui et toi ?",
                 timestamps: "le 18/01/2022 à 16:16",
                 ownMsg: false,
             },
             {
-                msg: "Oui.",
+                msg: "Très bien merci",
                 timestamps: "le 18/01/2022 à 16:16",
                 ownMsg: true,
             },
             {
-                msg: "Quoi de neuf ?",
+                msg: "Tu as bien réussi ta présentation d'ihm ?",
                 timestamps: "le 18/01/2022 à 16:16",
-                ownMsg: false,
+                ownMsg: true,
             },
             {
-                msg: "salut, ça va ?",
+                msg: "Non...",
                 timestamps: "le 18/01/2022 à 16:15",
                 ownMsg: false,
             },
             {
-                msg: "Oui très bien et toi ?",
-                timestamps: "le 18/01/2022 à 16:16",
-                ownMsg: false,
-            },
-            {
-                msg: "Oui.",
+                msg: "Tqt tu vas te rattraper :)",
                 timestamps: "le 18/01/2022 à 16:16",
                 ownMsg: true,
-            },
-            {
-                msg: "Quoi de neuf ?",
-                timestamps: "le 18/01/2022 à 16:16",
-                ownMsg: false,
             }
         ]
     },
@@ -65,6 +56,11 @@ const conversations = reactive([
                 msg: "STOP",
                 timestamps: "le 18/01/2022 à 16:16",
                 ownMsg: true,
+            },
+            {
+                msg: "Le rapport ??",
+                timestamps: "le 18/01/2022 à 16:16",
+                ownMsg: false,
             }
         ]
     },
@@ -136,7 +132,7 @@ const conversations = reactive([
                 ownMsg: false,
             }
         ]
-    },
+    }
 ]);
 
 const selectedUsername = ref("Nicolat");
@@ -149,6 +145,28 @@ function toggleSelect(username) {
 
 function getUserMsgs(username) {
     return conversations.find(conv => conv.username == username).msgs;
+}
+
+function friendNotNull() {
+    if (friendAdded == '')
+        return false;
+    showModal.value = true;
+}
+
+function newConv(username) {
+    showModal.value = false;
+    conversations.push({
+        username: username,
+        selected: false,
+        msgs: [
+            {
+                msg: "Salut !",
+                timestamps: "le 18/01/2022 à 16:15",
+                ownMsg: false,
+            }
+        ],
+    });
+    toggleSelect(username);
 }
 
 function sendMsgTo(username, msg) {
@@ -175,7 +193,7 @@ function setIntervalLimited(callback, interval, x) {
     }
 }
 
-
+const friendAdded = ref('');
 </script>
 
 <template>
@@ -188,6 +206,10 @@ function setIntervalLimited(callback, interval, x) {
         <div v-for="conv in conversations" @click="toggleSelect(conv.username)">
             <Conv :username="conv.username" :class="{ selected: conv.selected }" />
         </div>
+        <div class="add-friend">
+            <input id="the-input" type="text" placeholder="Ajouter un ami" v-model="friendAdded">
+            <input id="ok-btn" type="button" value="Ok" @click="friendNotNull">
+        </div>
     </div>
 
     <div class="msgs" id="messages">
@@ -196,9 +218,57 @@ function setIntervalLimited(callback, interval, x) {
         <Send :send="sendMsgTo" :username="selectedUsername" />
     </div>
     <div class="bordur"></div>
+
+    <transition name="modal">
+        <modal v-if="showModal" @close="(showModal = false)" @save="newConv(friendAdded)">
+            <template #header>
+                <h3>Requête d'ami(e) envoyée</h3>
+            </template>
+            <template #body>
+                <span>{{friendAdded}} a reçu votre requête !</span>
+            </template>
+        </modal>
+    </transition>
 </template>
 
 <style scoped>
+.add-friend {
+    border-radius: 15px;
+    margin: 10px;
+    border: 3px solid rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#the-input {
+    line-height: 40px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#ok-btn {
+    margin: 10px auto;
+    margin-left: 5px;
+    border: none;
+    height: 50px;
+    width: 80px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: var(--main-col);
+    border: 1px solid var(--main-col);
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+
+#ok-btn:hover {
+    background-color: var(--main-col);
+    color: white;
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
 .msgs {
     float: left;
     width: 40%;

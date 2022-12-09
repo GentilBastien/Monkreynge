@@ -18,8 +18,8 @@ const labelList = reactive([
 ]);
 
 const showModal = ref(false);
-const titre = ref("Titre");
-const description = ref("Description");
+const titre = ref('');
+const description = ref('');
 
 function popInvisibleLabels() {
     return labelList.filter(item => !item.visible);
@@ -59,8 +59,10 @@ function redirectToMain() {
             <label for="file" class="lab right">Parcourir...</label>
         </div>
         <div>
-            <input type="text" name="input-titre" class="form" id="titre" :value="titre">
-            <input type="text" name="input-description" class="form" id="description" :value="description">
+            <span class="formTitles" id="titre">Titre</span>
+            <input type="text" class="form" id="titres" v-model="titre" placeholder="Insérer titre">
+            <span class="formTitles">Description</span>
+            <input type="text" class="form" id="description" v-model="description" placeholder="Insérer description">
         </div>
         <div id="tags">
             <span class="formTitle">Ajouter des tags :</span>
@@ -137,6 +139,11 @@ function redirectToMain() {
     margin: 10px;
     width: calc(100% - 40px);
     background-color: rgb(44, 44, 44);
+}
+
+.formTitles {
+    color: white;
+    font-size: 30px;
 }
 
 #titre {

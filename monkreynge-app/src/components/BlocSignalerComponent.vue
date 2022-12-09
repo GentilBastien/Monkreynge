@@ -8,7 +8,7 @@ defineProps({
         type: String,
         required: true
     }
-})
+});
 </script>
 
 <template>
@@ -19,6 +19,9 @@ defineProps({
 </template>
 
 <style scoped>
+div {
+    cursor: pointer;
+}
 .txt {
     display: block;
     color: white;
